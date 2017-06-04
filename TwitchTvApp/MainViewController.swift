@@ -21,6 +21,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            return
+        }
+        
+        vController.gameName = "hello world \(indexPath.row)"
+        navigationController?.pushViewController(vController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,5 +46,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return CGSize(width: width/2, height: width/2)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 }
 
