@@ -43,11 +43,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func loadGames() {
         twitchRequest.getGames { response in
-            if let games = response?.games {
-                self.games = games
-                self.collectionView.reloadData()
+            guard let games = response?.games else {
                 self.refreshControl.endRefreshing()
+                self.presentAlert(withTitle: "Oops!", andMessage: "Could not fetch data. Please try again later.")
+                return
             }
+            
+            self.games = games
+            self.collectionView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     

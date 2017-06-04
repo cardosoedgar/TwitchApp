@@ -27,6 +27,7 @@
 		6C7A53C21EE4713D004C4779 /* TwitchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */; };
 		6C7A53C41EE48CAA004C4779 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */; };
 		6C7A53C61EE48CAF004C4779 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C7A53CF1EE4C396004C4779 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		6C7A53BC1EE46C28004C4779 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchRequest.swift; sourceTree = "<group>"; };
 		6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,10 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				6C7A537A1EE43C16004C4779 /* AppDelegate.swift */,
-				6C7A53A11EE44656004C4779 /* CollectionViewExtensions.swift */,
 				6C7A53841EE43C16004C4779 /* Assets.xcassets */,
 				6C7A53861EE43C16004C4779 /* LaunchScreen.storyboard */,
 				6C7A53891EE43C16004C4779 /* Info.plist */,
+				6C7A53A11EE44656004C4779 /* CollectionViewExtensions.swift */,
+				6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */,
 			);
 			name = support;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				6C7A53831EE43C16004C4779 /* TwitchTvApp.xcdatamodeld in Sources */,
 				6C7A53A01EE442F5004C4779 /* GameCell.swift in Sources */,
 				6C7A53AF1EE462A1004C4779 /* Response.swift in Sources */,
+				6C7A53CF1EE4C396004C4779 /* UIAlertControllerExtension.swift in Sources */,
 				6C7A53C21EE4713D004C4779 /* TwitchRequest.swift in Sources */,
 				6C7A53BD1EE46C28004C4779 /* NetworkRequest.swift in Sources */,
 				6C7A53B11EE463F9004C4779 /* Game.swift in Sources */,
