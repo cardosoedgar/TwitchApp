@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GameCell: UICollectionViewCell, ReusableCell, LoadNib {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
+    
+    func setup(game: Game) {
+        self.image.kf.setImage(with: game.image)
+        self.label.text = game.name
+    }
 }

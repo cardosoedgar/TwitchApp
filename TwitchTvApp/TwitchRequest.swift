@@ -12,7 +12,7 @@ class TwitchRequest {
     
     let networkRequest = NetworkRequest()
     
-    let url: URL = URL(string: "https://api.twitch.tv/kraken/games/top?client_id=dl2l5499288pnoy3sefchp6mlebxmc&api_version=5")!
+    let url: URL = URL(string: "https://api.twitch.tv/kraken/games/top?limit=50&client_id=dl2l5499288pnoy3sefchp6mlebxmc")!
     
     func getGames(completion: @escaping (Response?) -> Void) {
         networkRequest.request(url, method: .get, parameters: nil, headers: nil) { result in

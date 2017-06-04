@@ -11,20 +11,28 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     let twitchRequest = TwitchRequest()
+    var games = [Game]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCollectionView()
+        loadGames()
+    }
+
+    func setupCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(cellType: GameCell.self)
-        loadGames()
     }
     
     func loadGames() {
         twitchRequest.getGames { response in
-            NSLog("response: \(response?.total)")
+            if let games = response?.games {
+                self.games = games
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -33,25 +41,25 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        vController.gameName = "hello world \(indexPath.row)"
+        vController.game = games[indexPath.row]
         navigationController?.pushViewController(vController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: GameCell.self)
-        cell.label.text = "hello world \(indexPath.row)"
+        cell.setup(game: games[indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.size.width
-        return CGSize(width: width/2, height: width/2)
+        let width = collectionView.bounds.size.width / 2
+        return CGSize(width: width, height: width*1.3)
     }
 
     override func viewDidLayoutSubviews() {

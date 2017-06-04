@@ -21,10 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p81-M2-elD">
-                        <rect key="frame" x="0.0" y="260" width="300" height="40"/>
+                        <rect key="frame" x="0.0" y="240" width="300" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7u-In-ZcP">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="V7u-In-ZcP">
+                                <rect key="frame" x="8" y="0.0" width="284" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,10 +33,10 @@
                         <color key="backgroundColor" red="0.17254901959999999" green="0.14901960780000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="V7u-In-ZcP" firstAttribute="top" secondItem="p81-M2-elD" secondAttribute="top" id="1Ev-73-XKy"/>
-                            <constraint firstAttribute="trailing" secondItem="V7u-In-ZcP" secondAttribute="trailing" id="1em-D1-Icz"/>
+                            <constraint firstAttribute="trailing" secondItem="V7u-In-ZcP" secondAttribute="trailing" constant="8" id="1em-D1-Icz"/>
                             <constraint firstAttribute="bottom" secondItem="V7u-In-ZcP" secondAttribute="bottom" id="VX9-gi-Ymj"/>
-                            <constraint firstAttribute="height" constant="40" id="Vee-pc-t5b"/>
-                            <constraint firstItem="V7u-In-ZcP" firstAttribute="leading" secondItem="p81-M2-elD" secondAttribute="leading" id="tmK-8h-6nK"/>
+                            <constraint firstAttribute="height" constant="60" id="Vee-pc-t5b"/>
+                            <constraint firstItem="V7u-In-ZcP" firstAttribute="leading" secondItem="p81-M2-elD" secondAttribute="leading" constant="8" id="tmK-8h-6nK"/>
                         </constraints>
                     </view>
                 </subviews>

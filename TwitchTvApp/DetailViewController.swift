@@ -11,13 +11,20 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var gameLabel: UILabel!
+    @IBOutlet weak var channelsLabel: UILabel!
+    @IBOutlet weak var viewersLabel: UILabel!
     
-    var gameName: String?
+    var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gameLabel.text = gameName
+        setupGame()
+    }
+    
+    func setupGame() {
+        self.title = game?.name
+        self.image.kf.setImage(with: game?.image)
+        self.channelsLabel.text = "\(game?.channels ?? 0)"
+        self.viewersLabel.text = "\(game?.viewers ?? 0)"
     }
 }

@@ -12,11 +12,20 @@ typealias JsonObject = [String: Any]
 
 class Response {
     
-    let total: Int
-    let top: [Game]
+    let games: [Game]
     
-    init?(json: JsonObject?) {
-        self.total = json?["_total"] as? Int ?? 0
-        self.top = [Game]()
+    init?(json: JsonObject) {
+        guard let gamesJson = json["top"] as? [JsonObject] else {
+            return nil
+        }
+        
+        var games = [Game]()
+        for gameJson in gamesJson {
+            if let game = Game(json: gameJson) {
+                games.append(game)
+            }
+        }
+        
+        self.games = games
     }
 }
