@@ -18,6 +18,13 @@
 		6C7A53A21EE44656004C4779 /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53A11EE44656004C4779 /* CollectionViewExtensions.swift */; };
 		6C7A53A91EE44BB9004C4779 /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7A53A71EE44BB9004C4779 /* GameCell.xib */; };
 		6C7A53AC1EE45E23004C4779 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53AB1EE45E23004C4779 /* DetailViewController.swift */; };
+		6C7A53AF1EE462A1004C4779 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53AE1EE462A1004C4779 /* Response.swift */; };
+		6C7A53B11EE463F9004C4779 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53B01EE463F9004C4779 /* Game.swift */; };
+		6C7A53B61EE46570004C4779 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53B51EE46570004C4779 /* Json.swift */; };
+		6C7A53BD1EE46C28004C4779 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53BC1EE46C28004C4779 /* NetworkRequest.swift */; };
+		6C7A53BE1EE47086004C4779 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53B81EE46BE9004C4779 /* Alamofire.framework */; };
+		6C7A53BF1EE47086004C4779 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53B81EE46BE9004C4779 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C7A53C21EE4713D004C4779 /* TwitchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,20 @@
 			remoteInfo = TwitchTvApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6C7A53C01EE47086004C4779 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C7A53BF1EE47086004C4779 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C7A53771EE43C16004C4779 /* TwitchTvApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchTvApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +67,12 @@
 		6C7A53A11EE44656004C4779 /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 		6C7A53A71EE44BB9004C4779 /* GameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCell.xib; sourceTree = "<group>"; };
 		6C7A53AB1EE45E23004C4779 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6C7A53AE1EE462A1004C4779 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		6C7A53B01EE463F9004C4779 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6C7A53B51EE46570004C4779 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		6C7A53B81EE46BE9004C4779 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6C7A53BC1EE46C28004C4779 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7A53BE1EE47086004C4779 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +100,7 @@
 				6C7A53791EE43C16004C4779 /* TwitchTvApp */,
 				6C7A53911EE43C16004C4779 /* TwitchTvAppTests */,
 				6C7A53781EE43C16004C4779 /* Products */,
+				6C7A53B71EE46BE9004C4779 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +116,8 @@
 		6C7A53791EE43C16004C4779 /* TwitchTvApp */ = {
 			isa = PBXGroup;
 			children = (
+				6C7A53B41EE46559004C4779 /* Request */,
+				6C7A53AD1EE4628C004C4779 /* Model */,
 				6C7A53A51EE44946004C4779 /* Cell */,
 				6C7A537A1EE43C16004C4779 /* AppDelegate.swift */,
 				6C7A537C1EE43C16004C4779 /* MainViewController.swift */,
@@ -127,6 +158,33 @@
 			name = support;
 			sourceTree = "<group>";
 		};
+		6C7A53AD1EE4628C004C4779 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A53AE1EE462A1004C4779 /* Response.swift */,
+				6C7A53B01EE463F9004C4779 /* Game.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C7A53B41EE46559004C4779 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A53B51EE46570004C4779 /* Json.swift */,
+				6C7A53BC1EE46C28004C4779 /* NetworkRequest.swift */,
+				6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		6C7A53B71EE46BE9004C4779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A53B81EE46BE9004C4779 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +195,7 @@
 				6C7A53731EE43C16004C4779 /* Sources */,
 				6C7A53741EE43C16004C4779 /* Frameworks */,
 				6C7A53751EE43C16004C4779 /* Resources */,
+				6C7A53C01EE47086004C4779 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,12 +292,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7A53B61EE46570004C4779 /* Json.swift in Sources */,
 				6C7A53A21EE44656004C4779 /* CollectionViewExtensions.swift in Sources */,
 				6C7A537D1EE43C16004C4779 /* MainViewController.swift in Sources */,
 				6C7A537B1EE43C16004C4779 /* AppDelegate.swift in Sources */,
 				6C7A53AC1EE45E23004C4779 /* DetailViewController.swift in Sources */,
 				6C7A53831EE43C16004C4779 /* TwitchTvApp.xcdatamodeld in Sources */,
 				6C7A53A01EE442F5004C4779 /* GameCell.swift in Sources */,
+				6C7A53AF1EE462A1004C4779 /* Response.swift in Sources */,
+				6C7A53C21EE4713D004C4779 /* TwitchRequest.swift in Sources */,
+				6C7A53BD1EE46C28004C4779 /* NetworkRequest.swift in Sources */,
+				6C7A53B11EE463F9004C4779 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XK87ZWXZ25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwitchTvApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -394,6 +462,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XK87ZWXZ25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwitchTvApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

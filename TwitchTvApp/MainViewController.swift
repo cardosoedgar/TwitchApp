@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    let twitchRequest = TwitchRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(cellType: GameCell.self)
+        loadGames()
+    }
+    
+    func loadGames() {
+        twitchRequest.getGames { response in
+            NSLog("response: \(response?.total)")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
