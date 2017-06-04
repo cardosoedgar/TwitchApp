@@ -12,6 +12,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let refreshControl = UIRefreshControl()
+    
     let twitchRequest = TwitchRequest()
     var games = [Game]()
     
@@ -25,6 +27,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(cellType: GameCell.self)
+        
+        setupPullToRefresh()
+    }
+    
+    func setupPullToRefresh() {
+        if #available(iOS 10.0, *) {
+            self.collectionView.refreshControl = refreshControl
+        } else {
+            self.collectionView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(loadGames), for: .valueChanged)
     }
     
     func loadGames() {
@@ -32,6 +46,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let games = response?.games {
                 self.games = games
                 self.collectionView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
