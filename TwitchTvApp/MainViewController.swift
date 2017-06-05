@@ -81,7 +81,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.size.width / 2
+        let vertical = self.traitCollection.verticalSizeClass
+        let horizontal = self.traitCollection.horizontalSizeClass
+        var width = collectionView.bounds.size.width
+        
+        if vertical == .regular && horizontal == .regular {
+            width = width/6
+        } else if (vertical == .compact) {
+            width = width/4
+        } else {
+            width = width/2
+        }
+        
         return CGSize(width: width, height: width*1.3)
     }
 
