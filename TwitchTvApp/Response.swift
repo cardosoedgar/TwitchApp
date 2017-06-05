@@ -45,7 +45,12 @@ class Response {
         }
     }
     
-    init() {
+    init(shouldFetchGames: Bool) {
+        if (!shouldFetchGames) {
+            self.games = [Game]()
+            return
+        }
+        
         let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
         
         do {

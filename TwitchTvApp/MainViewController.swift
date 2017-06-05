@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let refreshControl = UIRefreshControl()
     
     let twitchRequest = TwitchRequest()
-    var response = Response()
+    var response = Response(shouldFetchGames: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func loadGames() {
         twitchRequest.getGames { response in
             guard let response = response else {
+                if self.response.games.count == 0 {
+                    self.response = Response(shouldFetchGames: true)
+                    self.collectionView.reloadData()
+                }
                 self.refreshControl.endRefreshing()
                 self.presentAlert(withTitle: "Oops!", andMessage: "Could not fetch data. Please try again later.")
                 return
