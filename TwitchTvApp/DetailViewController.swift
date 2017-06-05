@@ -22,8 +22,13 @@ class DetailViewController: UIViewController {
     }
     
     func setupGame() {
+        guard let image = game?.image,
+            let imageUrl = URL(string: image) else {
+            return
+        }
+        
         self.title = game?.name
-        self.image.kf.setImage(with: game?.image)
+        self.image.kf.setImage(with: imageUrl)
         self.channelsLabel.text = "\(game?.channels ?? 0)"
         self.viewersLabel.text = "\(game?.viewers ?? 0)"
     }

@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let refreshControl = UIRefreshControl()
     
     let twitchRequest = TwitchRequest()
-    var games = [Game]()
+    var response = Response()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +43,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func loadGames() {
         twitchRequest.getGames { response in
-            guard let games = response?.games else {
+            guard let response = response else {
                 self.refreshControl.endRefreshing()
                 self.presentAlert(withTitle: "Oops!", andMessage: "Could not fetch data. Please try again later.")
                 return
             }
-            
-            self.games = games
+        
+            self.response = response
             self.collectionView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -60,18 +60,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        vController.game = games[indexPath.row]
+        vController.game = response.games[indexPath.row]
         navigationController?.pushViewController(vController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return games.count
+        return response.games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: GameCell.self)
-        cell.setup(game: games[indexPath.row])
+        cell.setup(game: response.games[indexPath.row])
         
         return cell
     }
