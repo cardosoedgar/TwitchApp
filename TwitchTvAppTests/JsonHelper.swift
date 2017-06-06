@@ -9,9 +9,9 @@
 import Foundation
 
 class JsonHelper {
-    class func readJson() -> Any {
+    class func readJson(name: String) -> Any {
         do {
-            if let file = Bundle.main.url(forResource: "twitch", withExtension: "json") {
+            if let file = Bundle(for: self).url(forResource: name, withExtension: "json") {
                 let data = try Data(contentsOf: file)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let object = json as? [String: Any] {

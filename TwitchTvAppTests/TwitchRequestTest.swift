@@ -22,7 +22,8 @@ class TwitchRequestTest: QuickSpec {
             }
             
             it("should return nil for invalid json") {
-                twitchRequest.networkRequest = NetworkRequestMock()
+                let json = Json(json: JsonHelper.readJson(name: "invalid"))
+                twitchRequest.networkRequest = NetworkRequestMock(json: json)
                 var response: [JsonObject]? = [JsonObject]()
                 
                 twitchRequest.getGames(completion: { jsonObject in
@@ -44,7 +45,7 @@ class TwitchRequestTest: QuickSpec {
             }
             
             it("should return jsonobject for valid json") {
-                let json = Json(json: JsonHelper.readJson())
+                let json = Json(json: JsonHelper.readJson(name: "valid"))
                 twitchRequest.networkRequest = NetworkRequestMock(json: json)
                 var response: [JsonObject]? = nil
                 

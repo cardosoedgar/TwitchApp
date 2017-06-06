@@ -16,8 +16,9 @@
 		6C266B4F1EE6515800E87DDE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B4E1EE6515800E87DDE /* CoreDataHelper.swift */; };
 		6C266B541EE65AFA00E87DDE /* TwitchRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B531EE65AFA00E87DDE /* TwitchRequestTest.swift */; };
 		6C266B561EE65B4C00E87DDE /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B551EE65B4C00E87DDE /* NetworkRequestMock.swift */; };
-		6C266B581EE6632C00E87DDE /* twitch.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C266B571EE6632C00E87DDE /* twitch.json */; };
 		6C266B5A1EE663B300E87DDE /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B591EE663B300E87DDE /* JsonHelper.swift */; };
+		6C266B5E1EE668EF00E87DDE /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C266B5C1EE668EF00E87DDE /* invalid.json */; };
+		6C266B5F1EE668EF00E87DDE /* valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C266B5D1EE668EF00E87DDE /* valid.json */; };
 		6C7A537B1EE43C16004C4779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537A1EE43C16004C4779 /* AppDelegate.swift */; };
 		6C7A537D1EE43C16004C4779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537C1EE43C16004C4779 /* MainViewController.swift */; };
 		6C7A53801EE43C16004C4779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7A537E1EE43C16004C4779 /* Main.storyboard */; };
@@ -85,8 +86,9 @@
 		6C266B4E1EE6515800E87DDE /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		6C266B531EE65AFA00E87DDE /* TwitchRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchRequestTest.swift; sourceTree = "<group>"; };
 		6C266B551EE65B4C00E87DDE /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
-		6C266B571EE6632C00E87DDE /* twitch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitch.json; sourceTree = "<group>"; };
 		6C266B591EE663B300E87DDE /* JsonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		6C266B5C1EE668EF00E87DDE /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
+		6C266B5D1EE668EF00E87DDE /* valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = valid.json; sourceTree = "<group>"; };
 		6C7A53771EE43C16004C4779 /* TwitchTvApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchTvApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7A537A1EE43C16004C4779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C7A537C1EE43C16004C4779 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +155,8 @@
 		6C266B4A1EE64CD300E87DDE /* support */ = {
 			isa = PBXGroup;
 			children = (
-				6C266B571EE6632C00E87DDE /* twitch.json */,
+				6C266B5C1EE668EF00E87DDE /* invalid.json */,
+				6C266B5D1EE668EF00E87DDE /* valid.json */,
 				6C266B471EE64CCD00E87DDE /* TwitchTvAppTests-Bridging-Header.h */,
 				6C7A53941EE43C16004C4779 /* Info.plist */,
 				6C266B4E1EE6515800E87DDE /* CoreDataHelper.swift */,
@@ -366,7 +369,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C266B581EE6632C00E87DDE /* twitch.json in Resources */,
+				6C266B5F1EE668EF00E87DDE /* valid.json in Resources */,
+				6C266B5E1EE668EF00E87DDE /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
