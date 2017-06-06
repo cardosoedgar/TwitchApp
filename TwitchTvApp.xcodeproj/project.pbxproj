@@ -19,6 +19,7 @@
 		6C266B5A1EE663B300E87DDE /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B591EE663B300E87DDE /* JsonHelper.swift */; };
 		6C266B5E1EE668EF00E87DDE /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C266B5C1EE668EF00E87DDE /* invalid.json */; };
 		6C266B5F1EE668EF00E87DDE /* valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C266B5D1EE668EF00E87DDE /* valid.json */; };
+		6C266B631EE66A4B00E87DDE /* GameManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C266B621EE66A4B00E87DDE /* GameManagerTest.swift */; };
 		6C7A537B1EE43C16004C4779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537A1EE43C16004C4779 /* AppDelegate.swift */; };
 		6C7A537D1EE43C16004C4779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537C1EE43C16004C4779 /* MainViewController.swift */; };
 		6C7A53801EE43C16004C4779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7A537E1EE43C16004C4779 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		6C266B591EE663B300E87DDE /* JsonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		6C266B5C1EE668EF00E87DDE /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
 		6C266B5D1EE668EF00E87DDE /* valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = valid.json; sourceTree = "<group>"; };
+		6C266B621EE66A4B00E87DDE /* GameManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManagerTest.swift; sourceTree = "<group>"; };
 		6C7A53771EE43C16004C4779 /* TwitchTvApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchTvApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7A537A1EE43C16004C4779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C7A537C1EE43C16004C4779 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				6C266B4A1EE64CD300E87DDE /* support */,
 				6C266B481EE64CCE00E87DDE /* GameTests.swift */,
 				6C266B531EE65AFA00E87DDE /* TwitchRequestTest.swift */,
+				6C266B621EE66A4B00E87DDE /* GameManagerTest.swift */,
 			);
 			path = TwitchTvAppTests;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				6C266B561EE65B4C00E87DDE /* NetworkRequestMock.swift in Sources */,
 				6C266B541EE65AFA00E87DDE /* TwitchRequestTest.swift in Sources */,
 				6C266B4F1EE6515800E87DDE /* CoreDataHelper.swift in Sources */,
+				6C266B631EE66A4B00E87DDE /* GameManagerTest.swift in Sources */,
 				6C266B491EE64CCE00E87DDE /* GameTests.swift in Sources */,
 				6C266B5A1EE663B300E87DDE /* JsonHelper.swift in Sources */,
 			);

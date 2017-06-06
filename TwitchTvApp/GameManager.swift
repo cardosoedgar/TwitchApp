@@ -11,8 +11,8 @@ import CoreData
 
 class GameManager {
     
-    let coreDataStack = CoreDataStackManager()
-    let twitchRequest = TwitchRequest()
+    var coreDataStack = CoreDataStackManager()
+    var twitchRequest = TwitchRequest()
     
     private var games = [Game]()
     
@@ -20,7 +20,7 @@ class GameManager {
         twitchRequest.getGames { jsonObject in
             guard let json = jsonObject else {
                 if self.games.isEmpty {
-                    self.fetchGames()
+                    self.games = self.fetchGames()
                 }
                 
                 completion(false)
@@ -42,18 +42,17 @@ class GameManager {
         return games.count
     }
     
-    func fetchGames() {
+    func fetchGames() -> [Game] {
         let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
         
         do {
             guard let result = try coreDataStack.context.fetch(gamesFetch) as? [Game] else {
-                self.games = [Game]()
-                return
+                return [Game]()
             }
             
-            self.games = result
+            return result
         } catch {
-            self.games = [Game]()
+            return [Game]()
         }
     }
     
