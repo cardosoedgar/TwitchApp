@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias JsonObject = [String: Any]
+
 enum Json {
     case object(_: JsonObject)
     case array(_: [JsonObject])

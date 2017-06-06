@@ -13,13 +13,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     let refreshControl = UIRefreshControl()
-    
-    let twitchRequest = TwitchRequest()
-    var response = Response(shouldFetchGames: false)
+    let gameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupPullToRefresh()
         loadGames()
     }
 
@@ -27,8 +26,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(cellType: GameCell.self)
-        
-        setupPullToRefresh()
     }
     
     func setupPullToRefresh() {
@@ -42,18 +39,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func loadGames() {
-        twitchRequest.getGames { response in
-            guard let response = response else {
-                if self.response.games.count == 0 {
-                    self.response = Response(shouldFetchGames: true)
-                    self.collectionView.reloadData()
-                }
-                self.refreshControl.endRefreshing()
-                self.presentAlert(withTitle: "Oops!", andMessage: "Could not fetch data. Please try again later.")
-                return
+        gameManager.loadGames { success in
+            if !success {
+                self.presentAlert(withTitle: "Oops!",
+                                  andMessage: "Could not fetch data. Please try again later or check your connection.")
             }
-        
-            self.response = response
+            
             self.collectionView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -64,18 +55,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        vController.game = response.games[indexPath.row]
+        vController.game = gameManager.gameAt(index: indexPath.row)
         navigationController?.pushViewController(vController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return response.games.count
+        return gameManager.gamesCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: GameCell.self)
-        cell.setup(game: response.games[indexPath.row])
+        let game = gameManager.gameAt(index: indexPath.row)
+        cell.setup(game: game)
         
         return cell
     }

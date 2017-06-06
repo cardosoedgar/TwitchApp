@@ -36,4 +36,15 @@ class Game: NSManagedObject {
         
         return game
     }
+    
+    class func loadArray(jsonArray: [JsonObject], context: NSManagedObjectContext) -> [Game] {
+        var games = [Game]()
+        for gameJson in jsonArray {
+            if let game = Game.load(jsonObject: gameJson, context: context) {
+                games.append(game)
+            }
+        }
+        
+        return games
+    }
 }

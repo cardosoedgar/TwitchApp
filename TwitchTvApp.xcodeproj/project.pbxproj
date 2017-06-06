@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C129DC91EE6388900824472 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C129DC81EE6388900824472 /* GameManager.swift */; };
 		6C7A537B1EE43C16004C4779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537A1EE43C16004C4779 /* AppDelegate.swift */; };
 		6C7A537D1EE43C16004C4779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A537C1EE43C16004C4779 /* MainViewController.swift */; };
 		6C7A53801EE43C16004C4779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7A537E1EE43C16004C4779 /* Main.storyboard */; };
@@ -28,7 +29,6 @@
 		6C7A53C61EE48CAF004C4779 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C7A53CF1EE4C396004C4779 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */; };
 		6C7A53D61EE4D353004C4779 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53D41EE4D353004C4779 /* CoreDataStackManager.swift */; };
-		6C7A53D81EE4E4AD004C4779 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53D71EE4E4AD004C4779 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C129DC81EE6388900824472 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		6C7A53771EE43C16004C4779 /* TwitchTvApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchTvApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7A537A1EE43C16004C4779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C7A537C1EE43C16004C4779 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		6C7A53D41EE4D353004C4779 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
-		6C7A53D71EE4E4AD004C4779 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C129DC61EE635C000824472 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C7A537C1EE43C16004C4779 /* MainViewController.swift */,
+				6C7A53AB1EE45E23004C4779 /* DetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6C129DC71EE6386600824472 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6C129DC81EE6388900824472 /* GameManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		6C7A536E1EE43C16004C4779 = {
 			isa = PBXGroup;
 			children = (
@@ -125,12 +142,12 @@
 		6C7A53791EE43C16004C4779 /* TwitchTvApp */ = {
 			isa = PBXGroup;
 			children = (
+				6C129DC71EE6386600824472 /* Managers */,
 				6C7A53D01EE4D25D004C4779 /* CoreData */,
 				6C7A53B41EE46559004C4779 /* Request */,
 				6C7A53AD1EE4628C004C4779 /* Model */,
 				6C7A53A51EE44946004C4779 /* Cell */,
-				6C7A537C1EE43C16004C4779 /* MainViewController.swift */,
-				6C7A53AB1EE45E23004C4779 /* DetailViewController.swift */,
+				6C129DC61EE635C000824472 /* Controllers */,
 				6C7A537E1EE43C16004C4779 /* Main.storyboard */,
 				6C7A53AA1EE44C39004C4779 /* support */,
 			);
@@ -171,7 +188,6 @@
 		6C7A53AD1EE4628C004C4779 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6C7A53D71EE4E4AD004C4779 /* Response.swift */,
 				6C7A53B01EE463F9004C4779 /* Game.swift */,
 			);
 			name = Model;
@@ -315,10 +331,10 @@
 				6C7A53B61EE46570004C4779 /* Json.swift in Sources */,
 				6C7A53A21EE44656004C4779 /* CollectionViewExtensions.swift in Sources */,
 				6C7A537D1EE43C16004C4779 /* MainViewController.swift in Sources */,
+				6C129DC91EE6388900824472 /* GameManager.swift in Sources */,
 				6C7A537B1EE43C16004C4779 /* AppDelegate.swift in Sources */,
 				6C7A53AC1EE45E23004C4779 /* DetailViewController.swift in Sources */,
 				6C7A53831EE43C16004C4779 /* TwitchTvApp.xcdatamodeld in Sources */,
-				6C7A53D81EE4E4AD004C4779 /* Response.swift in Sources */,
 				6C7A53A01EE442F5004C4779 /* GameCell.swift in Sources */,
 				6C7A53D61EE4D353004C4779 /* CoreDataStackManager.swift in Sources */,
 				6C7A53CF1EE4C396004C4779 /* UIAlertControllerExtension.swift in Sources */,
