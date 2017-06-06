@@ -15,10 +15,12 @@ class CoreDataStackManager {
     var model:NSManagedObjectModel
     var store:NSPersistentStore?
     
+    let resource = "TwitchTvApp"
+    
     init() {
         let bundle = Bundle.main
         let modelURL =
-        bundle.url(forResource: "TwitchTvApp", withExtension:"momd")
+        bundle.url(forResource: resource , withExtension:"momd")
         model = NSManagedObjectModel(contentsOf: modelURL!)!
         
         psc = NSPersistentStoreCoordinator(managedObjectModel:model)

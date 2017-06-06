@@ -1,2 +1,4 @@
 github "Alamofire/Alamofire" "4.4.0"
 github "onevcat/Kingfisher" "3.10.1"
+github "Quick/Nimble" "v7.0.0"
+github "Quick/Quick" "v1.1.0"

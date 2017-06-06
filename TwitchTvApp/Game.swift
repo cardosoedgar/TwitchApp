@@ -16,8 +16,8 @@ class Game: NSManagedObject {
     @NSManaged var viewers: Int
     @NSManaged var channels: Int
     
-    class func load(jsonObject: JsonObject, context: NSManagedObjectContext) -> Game? {
-        let gameEntity = NSEntityDescription.entity(forEntityName: "Game", in: context)
+    class func load(jsonObject: JsonObject, context: NSManagedObjectContext?) -> Game? {
+        let gameEntity = NSEntityDescription.entity(forEntityName: "Game", in: context!)
         let game = Game(entity: gameEntity!, insertInto: context)
         
         guard let gameJson = jsonObject["game"] as? JsonObject,
