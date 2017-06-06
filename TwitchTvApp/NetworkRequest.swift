@@ -34,17 +34,17 @@ class NetworkRequest: NetworkRequestProtocol {
     }()
     
     func request(_ url: URL, method: HTTPMethod, parameters: [String : Any]?, headers: [String : String]?, completion: @escaping (Result<Json>) -> Void) -> Void {
-        
+
         manager.request(url,
-                          method: method,
-                          parameters: parameters,
-                          encoding: URLEncoding.default,
-                          headers: headers).responseJSON(completionHandler: { (response) in
+                        method: method,
+                        parameters: parameters,
+                        encoding: URLEncoding.default,
+                        headers: headers).responseJSON(completionHandler: { (response) in
                             if let value = response.result.value, let result = Json(json: value) {
                                 completion(.success(result))
                             } else {
                                 completion(.error)
                             }
-                          })
+                        })
     }
 }
