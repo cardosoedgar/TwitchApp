@@ -27,15 +27,6 @@ public extension LoadNib {
     }
 }
 
-public extension LoadNib where Self: UIView {
-    static func loadFromNib() -> Self {
-        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {
-            fatalError()
-        }
-        return view
-    }
-}
-
 public extension UICollectionView {
     
     final func register<T: UICollectionViewCell>(cellType: T.Type)

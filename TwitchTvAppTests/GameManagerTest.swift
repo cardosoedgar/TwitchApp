@@ -16,9 +16,9 @@ class GameManagerTest: QuickSpec {
         describe("GameManager") {
             
             var gameManager: GameManager!
-            var coreDataStackMock: CoreDataStackManager!
-            var twitchRequest: TwitchRequest!
-            
+            var coreDataStackMock = CoreDataStackManager()
+            var twitchRequest = TwitchRequest()
+
             beforeEach {
                 gameManager = GameManager()
                 coreDataStackMock = CoreDataStackManager()
@@ -63,6 +63,18 @@ class GameManagerTest: QuickSpec {
                 }
                 
                 expect(game).toEventuallyNot(beNil())
+            }
+            
+            it("should give nil to unkown index") {
+                let json = Json(json: JsonHelper.readJson(name: "valid"))
+                twitchRequest.networkRequest = NetworkRequestMock(json: json)
+                var game: Game? = Game()
+                
+                gameManager.loadGames{ success in
+                    game = gameManager.gameAt(index: 8)
+                }
+                
+                expect(game).toEventually(beNil())
             }
             
             it("should fetch games from core data") {

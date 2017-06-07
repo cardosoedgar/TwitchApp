@@ -34,8 +34,12 @@ class GameManager {
         }
     }
     
-    func gameAt(index: Int) -> Game {
-        return games[index]
+    func gameAt(index: Int) -> Game? {
+        if index >= 0 && index < games.count {
+            return games[index]
+        }
+        
+        return nil
     }
     
     func gamesCount() -> Int {

@@ -14,7 +14,9 @@ class GameCell: UICollectionViewCell, ReusableCell, LoadNib {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
     
-    func setup(game: Game) {
+    func setup(game: Game?) {
+        guard let game = game else { return }
+        
         let imageUrl = URL(string: game.image)
         self.image.kf.setImage(with: imageUrl)
         self.label.text = game.name

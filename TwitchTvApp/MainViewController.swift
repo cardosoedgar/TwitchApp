@@ -13,7 +13,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     let refreshControl = UIRefreshControl()
-    let gameManager = GameManager()
+    var gameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
