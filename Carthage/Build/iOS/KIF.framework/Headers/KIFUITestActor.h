@@ -11,7 +11,16 @@
 #import <UIKit/UIKit.h>
 #import "UIView-KIFAdditions.h"
 
+
+#if DEPRECATE_KIF_TESTER
+// Add `-DDEPRECATE_KIF_TESTER=1` to OTHER_CFLAGS if you'd like to prevent usage of `tester`.
+@class KIFUITestActor;
+KIFUITestActor *_KIF_tester() __attribute__((deprecated("Use of `tester` has been deprecated; Use `viewTester` instead.")));
+#define tester _KIF_tester()
+#else
 #define tester KIFActorWithClass(KIFUITestActor)
+#endif
+
 
 /*!
  @enum KIFSwipeDirection
@@ -84,6 +93,15 @@ typedef NS_ENUM(NSUInteger, KIFPullToRefreshTiming) {
 @interface KIFUITestActor : KIFTestActor
 
 /*!
+ @abstract Controls if typing methods will validate the entered text.
+ @discussion This method will only impact the functioning of the `enterText:...` method variants.
+ 
+ @param validateEnteredText Whether or not to validate the entered text. Defaults to YES.
+ @return The message reciever, these methods are intended to be chained together.
+ */
+- (instancetype)validateEnteredText:(BOOL)validateEnteredText;
+
+/*!
  @abstract Waits until a view or accessibility element is present.
  @discussion The view or accessibility element with the given label is found in the view hierarchy. If the element isn't found, then the step will attempt to wait until it is. Note that the view does not necessarily have to be visible on the screen, and may be behind another view or offscreen. Views with their hidden property set to YES are ignored.
  
@@ -101,7 +119,6 @@ typedef NS_ENUM(NSUInteger, KIFPullToRefreshTiming) {
  @param traits The accessibility traits of the element to wait for. Elements that do not include at least these traits are ignored.
  */
 - (UIView *)waitForViewWithAccessibilityLabel:(NSString *)label traits:(UIAccessibilityTraits)traits;
-
 
 /*!
  @abstract Waits until a view or accessibility element is present.
@@ -561,6 +578,13 @@ typedef NS_ENUM(NSUInteger, KIFPullToRefreshTiming) {
  @discussion Use this to dissmiss a location services authorization dialog or a photos access dialog by tapping the 'Allow' button. No action is taken if no alert is present.
  */
 - (BOOL)acknowledgeSystemAlert;
+
+/*!
+ @abstract If present, dismisses a system alert with the button at the given index, if any exists, usually 'Allow'. Returns YES if a dialog was dismissed, NO otherwise.
+ @discussion Use this to dissmiss a location services authorization dialog or a photos access dialog by tapping a button at the specified index. No action is taken if no alert is present.
+*/
+- (BOOL)acknowledgeSystemAlertWithIndex:(NSUInteger)index;
+
 #endif
 
 /*!

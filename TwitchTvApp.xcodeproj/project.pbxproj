@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0FAC1A2075B381004C5FC7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0FAC152075B379004C5FC7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C0FAC1C2075B381004C5FC7 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0FAC162075B379004C5FC7 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C129DC91EE6388900824472 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C129DC81EE6388900824472 /* GameManager.swift */; };
 		6C266B421EE64C8700E87DDE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C266B401EE64C8700E87DDE /* Nimble.framework */; };
 		6C266B431EE64C8700E87DDE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C266B411EE64C8700E87DDE /* Quick.framework */; };
@@ -33,11 +35,7 @@
 		6C7A53B11EE463F9004C4779 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53B01EE463F9004C4779 /* Game.swift */; };
 		6C7A53B61EE46570004C4779 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53B51EE46570004C4779 /* Json.swift */; };
 		6C7A53BD1EE46C28004C4779 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53BC1EE46C28004C4779 /* NetworkRequest.swift */; };
-		6C7A53BE1EE47086004C4779 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53B81EE46BE9004C4779 /* Alamofire.framework */; };
-		6C7A53BF1EE47086004C4779 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53B81EE46BE9004C4779 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C7A53C21EE4713D004C4779 /* TwitchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53C11EE4713D004C4779 /* TwitchRequest.swift */; };
-		6C7A53C41EE48CAA004C4779 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */; };
-		6C7A53C61EE48CAF004C4779 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A53C31EE48CAA004C4779 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C7A53CF1EE4C396004C4779 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53CE1EE4C396004C4779 /* UIAlertControllerExtension.swift */; };
 		6C7A53D61EE4D353004C4779 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A53D41EE4D353004C4779 /* CoreDataStackManager.swift */; };
 		6CC69E8E1EE782DC0088286E /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC69E8D1EE782DC0088286E /* KIF.framework */; };
@@ -59,6 +57,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6C0FAC142075B2F1004C5FC7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C0FAC1C2075B381004C5FC7 /* Kingfisher.framework in Embed Frameworks */,
+				6C0FAC1A2075B381004C5FC7 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6C266B441EE64C9500E87DDE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,21 +81,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C7A53C01EE47086004C4779 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6C7A53C61EE48CAF004C4779 /* Kingfisher.framework in Embed Frameworks */,
-				6C7A53BF1EE47086004C4779 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C0FAC152075B379004C5FC7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		6C0FAC162075B379004C5FC7 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = SOURCE_ROOT; };
 		6C129DC81EE6388900824472 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		6C266B401EE64C8700E87DDE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		6C266B411EE64C8700E87DDE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -132,8 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C7A53C41EE48CAA004C4779 /* Kingfisher.framework in Frameworks */,
-				6C7A53BE1EE47086004C4779 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +240,8 @@
 		6C7A53AA1EE44C39004C4779 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				6C0FAC152075B379004C5FC7 /* Alamofire.framework */,
+				6C0FAC162075B379004C5FC7 /* Kingfisher.framework */,
 				6C7A537A1EE43C16004C4779 /* AppDelegate.swift */,
 				6C7A53841EE43C16004C4779 /* Assets.xcassets */,
 				6C7A53861EE43C16004C4779 /* LaunchScreen.storyboard */,
@@ -303,7 +303,7 @@
 				6C7A53731EE43C16004C4779 /* Sources */,
 				6C7A53741EE43C16004C4779 /* Frameworks */,
 				6C7A53751EE43C16004C4779 /* Resources */,
-				6C7A53C01EE47086004C4779 /* Embed Frameworks */,
+				6C0FAC142075B2F1004C5FC7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
